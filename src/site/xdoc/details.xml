@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+    <properties>
+        <title>Details about HtmlUnit</title>
+        <author>RBRi</author>
+    </properties>
+
+    <body>
+        <section name="Request headers">
+            <p>
+                HtmlUnit mimics the browser as close as possible, of course this includes the sent request headers also.
+                But you can change this if needed at two levels; the request level and the client level.<br/>
+                To change the request header at the client level use WebClient.addRequestHeader(). You are able to
+                add additional headers to every request made by this client or overwrite the default ones.<br/>
+                Example: add an addition header to every client request
+            </p>
+            <source><![CDATA[client.addRequestHeader("from htmlunit", "yes");]]></source>
+            <p>
+                To change the request header at the client level use WebClient.addRequestHeader().<br/>
+                Example: replace the default accept-language header for all request made by this client.
+            </p>
+            <source><![CDATA[client.addRequestHeader(HttpHeader.ACCEPT_LANGUAGE, "fr");]]></source>
+            <p>
+                Example: replace the default accept-language header for all request made by this client.
+            </p>
+            <source><![CDATA[client.addRequestHeader(HttpHeader.ACCEPT_LANGUAGE, fromClient);]]></source>
+            <p>
+                Example: replace the default accept-language header for all request made by this client.
+            </p>
+            <source><![CDATA[client.addRequestHeader(HttpHeader.ACCEPT_LANGUAGE, fromClient);]]></source>
+            <p>
+                It is also possible to add/overwrite a request header for a dedicated request.
+                Example:
+            </p>
+            <source><![CDATA[
+WebRequest wr = new WebRequest(URL_FIRST);
+wr.setAdditionalHeader("from htmlunit", "yes");
+....
+client .getPage(wr);
+]]></source>
+        </section>
+
+        <section name="Attachments">
+            <p>
+                Normally pages are loaded inline: clicking on
+                a link, for example, loads the linked page in the current window. Attached pages are different
+                in that they are intended to be loaded outside of this flow: clicking on a link prompts the
+                user to either save the linked page, or open it outside of the current window, but does not
+                load the page in the current window.
+            </p>
+            <p>
+                HtmlUnit complies with the semantics described above when an <tt>AttachmentHandler</tt> has
+                been registered with the com.gargoylesoftware.htmlunit.WebClient via
+                com.gargoylesoftware.htmlunit.WebClient#setAttachmentHandler(AttachmentHandler). When
+                no attachment handler has been registered with the <tt>WebClient</tt>, the semantics described
+                above to not apply, and attachments are loaded inline. By default, <tt>AttachmentHandler</tt>s
+                are not registered with new <tt>WebClient</tt> instances.
+            </p>
+        </section>
+    </body>
+</document>
