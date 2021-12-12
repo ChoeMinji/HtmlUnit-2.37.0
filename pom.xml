@@ -26,7 +26,7 @@
         <htmlunitdriver.version>2.37.0</htmlunitdriver.version>
         <htmlunitcssparser.version>1.5.0</htmlunitcssparser.version>
         <htmlunitneko.version>2.37.0</htmlunitneko.version>
-        <htmlunitcorejs.version>2.37.0</htmlunitcorejs.version>
+        <htmlunitcorejs.version>2.55.0</htmlunitcorejs.version>
 
         <httpcomponents.version>4.5.11</httpcomponents.version>
         <jetty.version>9.4.26.v20200117</jetty.version>
@@ -214,7 +214,7 @@
                     <execution>
                         <configuration>
                             <rules>
-                                <dependencyConvergence />
+                                <dependencyConvergence/>
                             </rules>
                         </configuration>
                         <goals>
@@ -1044,7 +1044,7 @@
             <name>Adam Afeltowicz</name>
         </contributor>
         <contributor>
-            <name>Madis P&#x00e4;rn</name>
+            <name>Madis Pärn</name>
         </contributor>
         <contributor>
             <name>Michael Rimov</name>
